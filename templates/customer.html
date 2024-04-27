@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Page</title>
+</head>
+<body>
+    <h2>Customer Information</h2>
+    <p>Account Number: {{ customer.account.ANO }}</p>
+    <p>Account Name: {{ customer.account.ANAME }}</p>
+    <p>First Name: {{ customer.CUSFNAME }}</p>
+    <p>Last Name: {{ customer.CUSLNAME }}</p>
+    <form action="{% url 'update_email' %}" method="POST">
+        {% csrf_token %}
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{ customer.email }}" required><br><br>
+        <input type="submit" value="Update Email">
+    </form>
+</body>
+</html>

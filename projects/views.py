@@ -1,13 +1,11 @@
 from django.shortcuts import render
+from .models import Customer
 
 
 # Create your views here.
-def customer(request):
-    return render(request, 'customer.html')
-
-
-def employee(request):
-    return render(request, 'employee.html')
+def customer_view(request):
+    customer = Customer.objects.first()  # Assuming there's only one customer for simplicity
+    return render(request, 'customer.html', {'customer': customer})
 
 
 def login(request):

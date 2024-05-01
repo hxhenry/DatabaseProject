@@ -16,6 +16,10 @@ class HcyAccount(models.Model):
         managed = False
         db_table = 'hcy_account'
 
+    def __str__(self):
+        return self.aname
+
+
 
 class HcySavings(models.Model):
     ano = models.OneToOneField('HcyAccount', models.DO_NOTHING, db_column='ano', primary_key=True, db_comment='account number')
@@ -84,6 +88,9 @@ class HcyCustomer(models.Model):
     class Meta:
         managed = False
         db_table = 'hcy_customer'
+
+    def __str__(self):
+        return self.cemail
 
 
 class HcyState(models.Model):

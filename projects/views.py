@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from .models import Customer
+from .models import HcyCustomer
 
 
 # Create your views here.
 def customer_view(request):
-    customer = Customer.objects.first()  # Assuming there's only one customer for simplicity
+    customer = HcyCustomer.objects.first()  # Assuming there's only one customer for simplicity
     return render(request, 'customer.html', {'customer': customer})
 
 

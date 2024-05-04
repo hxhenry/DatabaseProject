@@ -1,0 +1,79 @@
+/* Basic styling for the login and registration forms */
+
+/* Shared styles */
+.auth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+}
+
+.card {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth__header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth__header img {
+    width: 50px;
+    height: 50px;
+}
+
+.auth__form {
+    margin-bottom: 20px;
+}
+
+.form__field {
+    margin-bottom: 15px;
+}
+
+.form__field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form__field input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.auth__actions {
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.auth__alternative {
+    text-align: center;
+}
+
+.auth__alternative a {
+    color: #333;
+    text-decoration: none;
+}
+
+.auth__alternative a:hover {
+    text-decoration: underline;
+}

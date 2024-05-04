@@ -1,7 +1,19 @@
 from django.forms import ModelForm
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 from .models import HcyCustomer
 
-class HcyCustomerForm(ModelForm):
+
+class HcyCustomerForm(UserCreationForm):
     class Meta:
-        model = HcyCustomer
-        fields = '__all__'
+        model = User
+        fields = ['first_name', 'email', 'username', 'password1', 'password2']
+        labels = {
+            'first_name': 'Name',
+        }
+
+    def __init__(self, *args, **kwargs):
+        super(HcyCustomerForm, self).__init__(*args, **kwargs)
+
+        for name, field in self.fields.items():
+            field.widget.attrs.update({'class': 'input'})

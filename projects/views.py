@@ -43,10 +43,10 @@ def loginUser(request):
 
 def registerUser(request):
     page = 'register'
-    form = UserCreationForm()
+    form = HcyCustomerForm()
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = HcyCustomerForm(request.POST)
         if form.is_valid():
             user = form.save(commit=False)
             user.username = user.username.lower()
